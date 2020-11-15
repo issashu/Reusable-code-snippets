@@ -2,7 +2,7 @@
 #include <vector>
 using namespace std;
 
-//Can also be done by creating classes for each Point and Vector of movement
+//Can also be done by creating classes for each Point and Vector of movement. IN classes we can set const in functions, when we don't want to modify variable.
 
 static vector <double> Velocity {0, 0};
 static vector <double> StartPosition {3.4 , 5.6};
