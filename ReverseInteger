@@ -1,0 +1,39 @@
+/* Small code snippet that was used to solve a task of finding if a number is a Palindrome.
+   The code could be done via an array or vector and then reversing its members and comparing.
+   Or, it seems that this is an easy task by using mathematical reversing by division of 10. 
+*/
+
+#include <iostream>
+using namespace std;
+
+bool isPalindrome(int x) {
+	//complete the function
+	int LastDigit = 0;
+	int ReverseNumber = 0;
+	int InputNumber = x;
+
+	while (x > 0)
+	{
+		LastDigit = x % 10;
+		ReverseNumber = (ReverseNumber * 10) + LastDigit;
+		x /= 10;
+	}
+	
+	if (InputNumber == ReverseNumber)
+		return true;
+	else
+		return false;
+}
+
+int main() {
+	int n;
+	cin >> n;
+	
+	if (isPalindrome(n)) {
+		cout << n << " is a palindrome";
+	}
+	else {
+		cout << n << " is NOT a palindrome";
+	}
+	return 0;
+}
