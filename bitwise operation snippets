@@ -21,4 +21,10 @@ int clearBitsIthrough0(int num, int i) {
     int mask = ~(((1 << (i+1)) - 1);
     return num & mask;
 }
+
+// To check two numbers bit by bit, if they are different at certain bit
+ // right shift both the numbers by 'i' and 
+        // check if the bit at the 0th position is different 
+        if (((A >> i) & 1) != ((B >> i) & 1)) { 
+            count++; 
   */
