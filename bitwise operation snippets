@@ -1,0 +1,11 @@
+/*
+ConvertBinary2(unsigned int Number, int Index) {
+  return (Number >> Index) & 0x1; // This will trace what bit is at position index
+
+  Number | 0b00001000; // This does an OR with the mask specified in 0b aka binary
+  Number | (0x1 << 4); // This will do an OR between Number and 1 after one has been shifted 4 times to the left
+
+  Number & 0b11110111; // Same as above but with end
+  Number & ~0b00001000; // Same as above but with negation NOT
+  Number | ~(0x1 << Index); // L:ogical OR but with moved by Index and a negation NOT
+  */
