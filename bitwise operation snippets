@@ -8,4 +8,17 @@ ConvertBinary2(unsigned int Number, int Index) {
   Number & 0b11110111; // Same as above but with end
   Number & ~0b00001000; // Same as above but with negation NOT
   Number | ~(0x1 << Index); // L:ogical OR but with moved by Index and a negation NOT
+  
+  
+  // To clear all bits from the most significant bit through i (inclusive), we do:
+int clearMSBthroughI(int num, int i) {
+    int mask = (1 << i) - 1;
+    return num & mask;
+}
+
+// To clear all bits from i through 0 (inclusive), we do:
+int clearBitsIthrough0(int num, int i) {
+    int mask = ~(((1 << (i+1)) - 1);
+    return num & mask;
+}
   */
