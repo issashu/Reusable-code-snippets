@@ -1,11 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include "queueOps.h"
 
 struct qNode {
     char NodeValue;
     int row;
     int col;
-    int8_t visitedflag;
     struct qNode *Next;
 };
 
@@ -14,17 +14,42 @@ struct queue {
     struct qNode* back;
 };
 
+/*NODE OPERATIONS START HERE*/
 qNode* NodeInit(char keyValue, int row, int col) {
     struct qNode *baseNode = (qNode*) malloc (sizeof(qNode));
     baseNode->NodeValue = keyValue;
     baseNode->row = row;
     baseNode->col = col;
-    baseNode->visitedflag = 0;
     baseNode->Next = NULL;
 
     return baseNode;
 }
 
+char getValue(qNode *baseNode) {
+    return baseNode->NodeValue;
+}
+
+int getRow(qNode *baseNode) {
+    return baseNode->row;
+}
+
+int getCol(qNode *baseNode) {
+    return baseNode->col;
+}
+
+void setValue(qNode *baseNode, char keyValue) {
+    baseNode->NodeValue = keyValue;
+}
+
+void setRow(qNode *baseNode, int row) {
+    baseNode->row = row;
+}
+
+void setCol(qNode *baseNode, int col) {
+    baseNode->col = col;
+}
+
+/* QUEUE OPERATIONS START HERE*/
 queue* QueueInit(){
     queue *baseQueue = (queue*) malloc (sizeof(queue));
     baseQueue->front = NULL;
@@ -62,6 +87,14 @@ int8_t isEmpty(queue *baseQueue) {
     else{
         return 0;
     }
+}
+
+qNode* getFront(queue *baseQueue) {
+    return baseQueue->front;
+}
+
+qNode* getBack(queue *baseQueue) {
+    return baseQueue->back;
 }
 
 int getSize(queue *baseQueue) {
